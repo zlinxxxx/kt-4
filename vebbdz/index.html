@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машинка</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #e0f7fa;
+        }
+        .container {
+            width: 200px;
+            height: 100px;
+            background-color: #22ff34; 
+            position: absolute;
+            bottom: 50px; 
+            border-radius: 10px;
+            animation: drive 3s forwards; 
+        }
+        .container-body {
+            width: 30px;
+            height: 30px;
+            background-color: #d61212; 
+            border-radius: 50%;
+            position: absolute;
+            bottom: -15px; 
+        }
+        .container-body.left {
+            border-radius: 10px;
+            left: 20px; 
+            animation: 2s infinite linear rotation;
+        }
+        .container-body.right {
+            border-radius: 10px;
+            right: 20px; 
+             animation: 2s infinite linear rotation;
+        }
+        @keyframes rotation{
+            100% {
+                transform: rotate(0deg) 
+            }
+           
+            100%{
+                transform: rotate(-360deg)
+            }
+        }
+        @keyframes drive {
+            from {
+                left: -200px; 
+            }
+            to {
+                left: calc(100vw - 250px); 
+            }
+        }
+        .container-item{
+            width: 50px;
+            height: 50px;
+            background-color: #9c22ff; 
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container-body left"></div>
+        <div class="container-body right"></div>
+        <div class="container-item"></div>
+    </div>
+</body>
+</html>
